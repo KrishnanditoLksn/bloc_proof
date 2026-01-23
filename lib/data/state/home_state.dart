@@ -13,7 +13,7 @@ class PlantHomeInitial extends HomeState {}
 class PlantHomeLoading extends HomeState {}
 
 class PlantHomeLoaded extends HomeState {
-  final Plant plant;
+  final List<Plant?> plant;
   const PlantHomeLoaded(this.plant);
 }
 

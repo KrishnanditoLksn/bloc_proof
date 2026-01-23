@@ -11,7 +11,7 @@ class PlantHomeBlocs extends Bloc<event_trigger.PlantHomeEvent, HomeState> {
       try {
         emit(PlantHomeLoading());
         final datas = await repository.getAllPlants();
-        emit(PlantHomeLoaded(datas!));
+        emit(PlantHomeLoaded(datas));
       } on PlantHomeError {
         emit(const PlantHomeError("An Error Occured"));
       }
