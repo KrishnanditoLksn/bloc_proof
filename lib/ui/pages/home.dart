@@ -55,9 +55,16 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _cardItem(BuildContext context , Plant plant) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Widget _cardItem(BuildContext context, List<Plant?> plant) {
+    return ListView.builder(
+      itemCount: plant.length,
+      itemBuilder: (context, index) {
+        final p = plant[index];
+        return ListTile(
+          title: Text(p!.species),
+          subtitle: Text(p.age.toString()),
+        );
+      },
     );
   }
 
